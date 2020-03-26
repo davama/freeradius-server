@@ -196,7 +196,7 @@ Summary: LDAP support for FreeRADIUS
 Group: System Environment/Daemons
 Requires: %{name}%{?_isa} = %{version}-%{release}
 Requires: (openldap-ltb or symas-openldap)
-BuildRequires: openldap-ltb
+BuildRequires: (openldap-ltb or symas-openldap)
 
 %description ldap
 This plugin provides LDAP support for the FreeRADIUS server project.
