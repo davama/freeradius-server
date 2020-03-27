@@ -428,8 +428,10 @@ export RADIUSD_VERSION_RELEASE="%{release}"
         --with-threads \
         --with-thread-pool \
         --with-docdir=%{docdir} \
+%if %{?_with_freeradius_ldap:1}%{!?_with_freeradius_ldap:0}
 	--with-libfreeradius-ldap-include-dir=/usr/local/openldap/include \
 	--with-libfreeradius-ldap-lib-dir=/usr/local/openldap/lib64 \
+%endif
         --with-rlm-sql_postgresql-include-dir=/usr/include/pgsql \
         --with-rlm-sql-postgresql-lib-dir=%{_libdir} \
         --with-rlm-sql_mysql-include-dir=/usr/include/mysql \
